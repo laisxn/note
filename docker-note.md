@@ -1,14 +1,14 @@
 基于centos7
 
-#查看内核
+# 查看内核
 uname -r
-#安装docker
+# 安装docker
 yum install docker
-#加入开机启动
+# 加入开机启动
 systemctl start docker
 systemctl enable docker
 
-安装docker-compose
+#安装 docker-compose
 
 pip install docker-compose
 
