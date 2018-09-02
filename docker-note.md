@@ -21,3 +21,5 @@ $ docker ps -a -q // 查看所有容器ID
 $ docker stop $(docker ps -a -q) //  stop停止所有容器
 $ docker  rm $(docker ps -a -q) //   remove删除所有容器
 
+docker exec -i -t 容器ID或名字 /bin/bash  // 进入运行中的容器
+
