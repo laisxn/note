@@ -23,3 +23,16 @@ $ docker  rm $(docker ps -a -q) //   remove删除所有容器
 
 docker exec -i -t 容器ID或名字 /bin/bash  // 进入运行中的容器
 
+解决用dockerfile生成镜像慢的问题
+添加 文件 /etc/docker/daemon.json（Linux）
+{
+  "registry-mirrors": ["https://navyf335.mirror.aliyuncs.com"]
+}
+
+启动        systemctl start docker
+守护进程重启   sudo systemctl daemon-reload
+重启docker服务   systemctl restart  docker
+重启docker服务  sudo service docker restart
+关闭docker service docker stop
+关闭docker systemctl stop docker
+
