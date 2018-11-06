@@ -1,0 +1,5 @@
+php  window install redis 
+
+http://pecl.php.net/package/redis/2.2.7/windows php 扩展文件
+
+https://github.com/ServiceStack/redis-windows 安装包
