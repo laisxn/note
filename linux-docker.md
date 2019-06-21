@@ -5,16 +5,15 @@
 
 2、yum 安装`yum -y install docker`
 
-3、加入开机启动 `systemctl start docker systemctl enable docker`
+3、加入开机启动 `systemctl start docker && systemctl enable docker`
 
 4、解决用Dockerfile生成镜像慢的问题 
 
     编辑文件 `/etc/docker/daemon.json（Linux） { "registry-mirrors": ["https://navyf335.mirror.aliyuncs.com"] }`
 
 ## docker-compose安装
-1、安装python3 `yum -y install python3`
 
-2、安装python-pip 
+1、安装python-pip 
 
     ① `yum -y install epel-release`
 
