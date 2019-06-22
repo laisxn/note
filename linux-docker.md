@@ -44,9 +44,8 @@ git clone地址，进入对应的project文件夹，执行命令
 5、配置supervisord开机启动
 
     进入/lib/systemd/system目录，并创建supervisor.service文件
-    
-    `vim supervisor.service`
-    ```
+    vim supervisor.service
+  
     //文件内容：
     [Unit]
     Description=supervisor
@@ -63,14 +62,24 @@ git clone地址，进入对应的project文件夹，执行命令
 
     [Install]
     WantedBy=multi-user.target
-    ```
+
     设置开机启动
-    ```
     systemctl enable supervisor.service
     systemctl daemon-reload
-    ```
+    
     修改文件权限为766
-    `chmod 766 supervisor.service`
+    chmod 766 supervisor.service
+    
+    配件文件例子
+    [program:webchat]
+    process_name=%(program_name)s_%(process_num)02d
+    command=docker exec project_php_1 php /www/webchat/src/WebChat.php
+    autostart=true
+    autorestart=true
+    user=root
+    numprocs=1
+    redirect_stderr=true
+    stdout_logfile=/var/log/webchat.log
 
 ###### docker登录 `docker login`
 
