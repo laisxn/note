@@ -7,7 +7,7 @@
 
 # 第二步：安装必要的软件包以允许apt通过HTTPS使用存储库，具体如下：
 
-# sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+# sudo apt-get install ca-certificates curl software-properties-common
 # 第三步：添加GPG密钥，可以添加官方的和阿里的，添加阿里的，国内的快
 
 // 官方
