@@ -12,6 +12,7 @@
 
 // 官方
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
 // 阿里
 curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
 添加完毕后可以执行以下命令验证：
@@ -25,7 +26,7 @@ uid           [ 未知 ] Docker Release (CE deb) <docker@docker.com>
 sub   rsa4096 2017-02-22 [S]
 说明 Ok，继续
 
-# 第四步：设定稳定仓储库，这一步我被 坑了好久，具体参考
+# 第四步：设定稳定仓储库，具体参考
 
 docker配置仓储库时出错：无法安全地用该源进行更新，所以默认禁用该源
 也可以不设置，不设置默认使用官方的，具体是：deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
@@ -54,7 +55,7 @@ apt-cache madison docker-ce
 
 安装完成 后执行docker -v命令
 
-# windows10子系统有其特殊性，需要安装docker for windows，这个就是docker daemon
+# windows10子系统有其特殊性，需要安装docker for windows，这个就是docker daemon（打开wsl的时候使用管理员身份运行，否正无法启动docker）
 [https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe]
 
 
