@@ -25,8 +25,12 @@ docker exec -i -t 容器ID或名字 /bin/bash  // 进入运行中的容器
 
 # 宿主机运行定时任务/脚本
  docker exec  project_php_1  php /www/ws.php
+# docker情况下 宿主机查看端口连接情况
+docker inspect -f '{{.State.Pid}}' <containerid> # note the PID
+sudo nsenter -t <pid> -n netstat | grep ESTABLISHED
 
-解决用dockerfile生成镜像慢的问题
+# 解决用dockerfile生成镜像慢的问题
+
 添加 文件 /etc/docker/daemon.json（Linux）
 {
   "registry-mirrors": ["https://navyf335.mirror.aliyuncs.com"]
